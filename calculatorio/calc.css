@@ -1,0 +1,60 @@
+/* Container styling */
+.calculator {
+    width: 320px;
+    margin: 50px auto;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* Display screen (the <p> tag) */
+#xd {
+    background-color: #222;
+    color: #00ff00; /* Neon green text */
+    font-family: 'Courier New', monospace;
+    font-size: 2rem;
+    text-align: right;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    min-height: 40px;
+    word-wrap: break-word;
+}
+
+/* Grid layout for buttons */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+    gap: 10px;
+}
+
+/* Universal button styling */
+button {
+    padding: 20px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #444;
+    color: white;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Specific styling for operators/special buttons */
+.plus, .minus, .times, .division, .equal {
+    background-color: #ff9500; /* Orange for math */
+}
+
+.delete, .back {
+    background-color: #ff3b30; /* Red for clear/delete */
+}
+
+.equal {
+    grid-row: span 1; /* Adjust if you want it taller */
+    background-color: #4cd964; /* Green for result */
+}

@@ -1,0 +1,22 @@
+
+#board 
+{
+  display: grid;
+  grid-template-columns: repeat(8, 60px);
+  grid-template-rows: repeat(8, 60px);
+  gap: 1px;
+  
+}
+#trans
+{
+  display: grid;
+  grid-template-columns: repeat(4,62.5px);
+  grid-template-rows: repeat(1,62.5px);
+  gap: 52px;
+  
+}
+
+button {
+  cursor: pointer;
+}
+html{background-color: gray;}
