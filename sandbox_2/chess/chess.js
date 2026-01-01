@@ -1,9 +1,19 @@
 
+
+
+document.onreadystatechange = onready;
+
+
+function onready() {
+if(document.readyState==="interactive"){
 const board = document.getElementById("board");
 const trans = document.getElementById("trans");
 //setup
-for (let y = 0; y < 8; y++) {
-  for (let x = 0; x < 8; x++) {
+var y=0;
+
+
+for (y ; y < 8; y++) {
+  for (let x=0 ; x < 8; x++) {
     const btn = document.createElement("button");
 
 
@@ -14,13 +24,18 @@ for (let y = 0; y < 8; y++) {
    
 
 
-
     if (y=== 1||y===6) {
-    btn.className = 'p'; }
-    else if ((y=== 0||y===7) && (x===0||x===7)) {
-    btn.className = 'r';}
-    else if ((y=== 0||y===7) && (x===1||x===6)) {
-    btn.className = 'k';}
+    	
+		btn.className = 'p'; 
+
+	} else if ((y=== 0||y===7) && (x===0||x===7)) {
+
+   		btn.className = 'r';
+	
+	}else if ((y=== 0||y===7) && (x===1||x===6)) {
+
+  	  	btn.className = 'k';}
+
     else if ((y=== 0||y===7) && (x===2||x===5)) {
     btn.className = 'b';}
     else if ((y=== 0||y===7)&&x===3 ) {
@@ -45,12 +60,9 @@ for (let y = 0; y < 8; y++) {
 
 
     //actual shit
-    btn.addEventListener("click", () => {
-      console.log("-------------------------");
-      console.log(`Clicked: x=${x}, y=${y}`);
-      console.log(` ${btn.classList[0]} ${btn.classList[1]}`);
+    btn.addEventListener("click", HANDLERS.field_click );
 
-    });
+	
 
     btn.addEventListener("click",clik);
 
@@ -834,4 +846,6 @@ function castle(a) {
   }//3
   imag()
   state="0"
+}
+}
 }
