@@ -9,10 +9,10 @@ if(document.readyState==="interactive"){
 const board = document.getElementById("board");
 const trans = document.getElementById("trans");
 //setup
-var y=0;
 
 
-for (y ; y < 8; y++) {
+
+for (let y=0 ; y < 8; y++) {
   for (let x=0 ; x < 8; x++) {
     const btn = document.createElement("button");
 
@@ -96,8 +96,8 @@ function imag() {
     btn.style.backgroundImage =`url("icons/${color}_${piece}.png")`;
 
   });
-}
-imag()
+} imag()
+
 
 let state = "0"
 console.log("state:none")
@@ -117,6 +117,7 @@ let j;
 let enpass=false;
 let enpassx;
 let enpassy;
+
 function clik (e)
 {
   const allButtons = board.querySelectorAll("button");
@@ -681,6 +682,7 @@ function getButtonAt(x,y){
     `button[data-x="${x}"][data-y="${y}"]`
   );
 }
+
 function motion(cx, cy) {
   const fromBtn = getButtonAt(lx, ly);
   const toBtn = getButtonAt(cx, cy);
